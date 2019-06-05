@@ -12,6 +12,8 @@ const boardRoute = require('./routes/board.route');
 const userRoute = require('./routes/user.route');
 const homeRoute = require('./routes/home.route');
 const config = require('./DB');
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../public/index.html")));
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
@@ -26,6 +28,7 @@ db.once('open',function(){
 // app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
 app.use(flash());
 app.use(session({
     secret:'kanghyeok93',
