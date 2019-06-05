@@ -20,7 +20,8 @@
     "start": "cross-env NODE_PATH=src react-scripts start",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"cross-env NODE_PATH=src react-scripts start\" \"nodemon api/server.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +38,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
 }
