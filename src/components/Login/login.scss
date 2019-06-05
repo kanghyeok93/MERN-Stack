@@ -1,0 +1,16 @@
+.Login{
+  width:70%;
+  margin:0 auto;
+  .login_error{
+    color:red;
+    width:100%;
+    text-align: center;
+    margin:10px 0;
+  }
+  .login_error_sub{
+     color : red;
+     width:100%;
+     display:inline-block;
+     text-align: center;
+  }
+}

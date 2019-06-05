@@ -1,0 +1,24 @@
+.Index{
+  width:70%;
+  margin:0 auto;
+  .write{
+    color:white;
+    text-decoration:none;
+  }
+  .tr_center{
+    text-align: center;
+  }
+  .login-error{
+    color:red;
+    text-align:center;
+    width:100%;
+    margin:15px 0 50px 0;
+  }
+  .pagination{
+    display:inline-block;
+    width:100%;
+    text-align: center;
+    font-size:1.3rem;
+  }
+
+}

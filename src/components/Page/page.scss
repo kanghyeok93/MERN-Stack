@@ -1,0 +1,11 @@
+.Page{
+  display : inline-block;
+  .page_num{
+    margin:0px 5px;
+    text-decoration:none;
+    &:focus{
+      color:red;
+      font-size:1.5rem
+    }
+  }
+}

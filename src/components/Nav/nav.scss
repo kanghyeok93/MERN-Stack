@@ -1,0 +1,12 @@
+.NavLink{
+  font-size:1.5rem;
+  text-decoration:none;
+  color:black;
+  font-family: 'Baloo Bhai', cursive;
+  margin:10px;
+  &:hover{
+    text-decoration:none;
+    color:red;
+  }
+}
+
