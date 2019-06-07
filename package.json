@@ -17,11 +17,10 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "cd api && node server",
     "heroku-postbuild": "npm install && npm run build",
+    "build": "react-scripts build",
     "dev": "concurrently \"react-scripts start\" \"nodemon api/server.js\""
   },
   "eslintConfig": {
