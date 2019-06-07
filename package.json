@@ -21,6 +21,7 @@
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "heroku-postbuild" : "npm install && npm run build",
     "dev": "concurrently \"cross-env NODE_PATH=src react-scripts start\" \"nodemon api/server.js\""
   },
   "eslintConfig": {

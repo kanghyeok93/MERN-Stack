@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 // const cors = require('cors');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -11,14 +12,14 @@ const PORT =  process.env.PORT || 8080;
 const boardRoute = require('./routes/board.route');
 const userRoute = require('./routes/user.route');
 const homeRoute = require('./routes/home.route');
-const config = require('./DB');
-const path = require("path");
-app.use(express.static(path.join(__dirname, "../public/index.html")));
+// const config = require('./DB');
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
-mongoose.connect(config.DB, { useNewUrlParser: true });
+const url = "mongodb+srv://kanghyeok93:rkdgur4635@cluster0-av3h2.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(process.env.MONGODB_URI || url, { useNewUrlParser: true });
+
 const db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error !!!'));
 db.once('open',function(){
@@ -42,6 +43,14 @@ app.use(passport.session());
 app.use('/',homeRoute);
 app.use('/board',boardRoute);
 app.use('/user',userRoute);
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('../build'));
+
+    app.get('*', (req,res) => {
+        res.sendFile(path.join(__dirname,'build','index.html')); // relative path
+    })
+}
 
 app.listen(PORT,function(){
     console.log('Server is running on Port:', PORT);
