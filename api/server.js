@@ -7,7 +7,6 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/passport');
 const app = express();
-const PORT =  process.env.PORT || 8080;
 
 const boardRoute = require('./routes/board.route');
 const userRoute = require('./routes/user.route');
@@ -51,6 +50,6 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
-app.listen(PORT,function(){
-    console.log('Server is running on Port:', PORT);
+app.listen(process.env.PORT || 8080,function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
