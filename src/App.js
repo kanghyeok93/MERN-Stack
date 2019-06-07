@@ -1,7 +1,7 @@
 import './App.scss'
 
 import React, {Component} from 'react';
-import { Nav,Index,Write,Show,Edit,User,Sign,UShow,UEdit,Login } from 'components';
+import { Nav,Index,Write,Show,Edit,User,Sign,UShow,UEdit,Login } from '../src/components';
 import { Route,Switch } from 'react-router-dom';
 import axios from 'axios';
 
