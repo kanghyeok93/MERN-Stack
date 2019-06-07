@@ -12,13 +12,12 @@ const PORT =  process.env.PORT || 8080;
 const boardRoute = require('./routes/board.route');
 const userRoute = require('./routes/user.route');
 const homeRoute = require('./routes/home.route');
-// const config = require('./DB');
+const config = require('./DB');
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
-const url = "mongodb+srv://kanghyeok93:rkdgur4635@cluster0-av3h2.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(process.env.MONGODB_URI || url, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || config.DB, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error !!!'));
