@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Form, ButtonToolbar, Button, Alert} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 import './edit.scss';
-import {Link} from "react-router-dom";
 
 class Edit extends Component {
 
@@ -51,9 +51,7 @@ class Edit extends Component {
         const { onChange,onSubmit } = this;
 
         if(errors === 'Update complete'){
-            // setTimeout(()=> {
                 this.props.history.push('/show/' + this.props.match.params.id);
-            // },1000);
         }
         return (
             <div className="Edit">

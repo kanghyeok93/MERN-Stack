@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-import './u_index.scss'
+import './u_index.scss';
 
 class UTableItem extends Component {
     render() {

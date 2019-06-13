@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Button, Col, Form, Row, Alert} from "react-bootstrap";
 import {Link} from 'react-router-dom';
-
-import './u_edit.scss'
 import axios from "axios";
+
+import './u_edit.scss';
 
 class UEdit extends Component {
 

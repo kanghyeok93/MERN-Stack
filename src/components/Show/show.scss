@@ -7,10 +7,13 @@
       margin:20px 0;
     }
     .Show_body{
-      margin:20px 0;
       padding:15px;
       font-size:1.3rem;
-      box-shadow:0px 1px 10px rgba(0, 0, 0, 0.3) ;
+      box-sizing: border-box;
+      border-style: solid;
+      border-image: linear-gradient(to right, #777777 0%, #EEEEEE 100%);
+      border-image-slice: 1;
+      background: #f7f7f7;
     }
     h3 p{
       display:inline-block;
@@ -27,4 +30,23 @@
 }
 .author{
   font-weight: bold;
+}
+.C_h2{
+  font-family: 'Cute Font', cursive;
+  margin-bottom:0;
+  text-align: center;
+  font-weight:bold;
+}
+.reply_error{
+  color : red;
+  width:100%;
+  display:inline-block;
+  text-align: center;
+}
+.reply-com-error{
+  color : red;
+  width:100%;
+  display:inline-block;
+  text-align: center;
+  margin:20px 0 40px 0;
 }

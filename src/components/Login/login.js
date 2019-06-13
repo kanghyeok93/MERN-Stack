@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-
-import './login.scss'
 import {Button, Col, Form, Row} from "react-bootstrap";
 import axios from "axios";
+
+import './login.scss';
 
 class Login extends Component {
 
@@ -36,8 +36,6 @@ class Login extends Component {
 
         axios.post('/login',obj)
             .then(res => {
-                console.log('login response:');
-                console.log(res.data);
                 if(res.data.msg === "login"){
                     this.props.updateUser({
                         loggedIn : true,

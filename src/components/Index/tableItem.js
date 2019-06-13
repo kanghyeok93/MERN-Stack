@@ -18,7 +18,13 @@ class TableItem extends Component {
                     :
                         <tr>
                             <td>
-                                <Link to={"/show/" + obj._id} style={{textDecoration:"none"}} className="ellipsis">{obj.title}</Link>
+                                <Link to={"/show/" + obj._id} style={{textDecoration:"none"}} className="ellipsis">
+                                    {obj.title}
+                                    {
+                                       (obj.comments.length !== 0) ? <span> ({obj.comments.length})</span>
+                                           : null
+                                    }
+                                </Link>
                             </td>
                             <td className="td_center">
                                 {

@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var User = require('../models/user.model');
-var util = require('../../util');
+const express = require('express');
+const router = express.Router();
+
+const User = require('../models/user.model');
+const util = require('../../util');
 
 router.get('/',util.isLoggedin,function(req,res){
    User.find({}).sort({username:1}).exec(function(err,users){
@@ -11,14 +12,14 @@ router.get('/',util.isLoggedin,function(req,res){
 });
 
 router.get('/sign',function(req,res){
-    var user = req.flash("user")[0] || {};
-    var errors = req.flash("errors")[0] || {};
+    let user = req.flash("user")[0] || {};
+    let errors = req.flash("errors")[0] || {};
     res.json({user : user ,errors : errors});
 });
 
 //add
 router.post('/add',function(req,res){
-    var newUser = new User(req.body);
+    let newUser = new User(req.body);
     newUser.save()
         .then(() => {
             res.json('Add complete');
@@ -40,8 +41,8 @@ router.get("/show/:username",util.isLoggedin,function(req,res){
 
 //edit
 router.get("/edit/:username",util.isLoggedin,checkPermission,function(req,res){
-    var user = req.flash('user')[0];
-    var errors = req.flash('errors')[0] || {};
+    let user = req.flash('user')[0];
+    let errors = req.flash('errors')[0] || {};
     if(!user){
         User.findOne({username : req.params.username},function(err,user){
             if(err) return res.json(err);
@@ -53,7 +54,7 @@ router.get("/edit/:username",util.isLoggedin,checkPermission,function(req,res){
 });
 
 // update
-router.post("/update/:username",util.isLoggedin,checkPermission,function(req,res,next){
+router.post("/update/:username",util.isLoggedin,checkPermission,function(req,res){
     User.findOne({username : req.params.username})
         .select({password:1})
         .exec(function(err,user){

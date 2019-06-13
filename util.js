@@ -20,13 +20,12 @@ util.isLoggedin = function(req,res,next){
         next()
     }else{
         req.flash("errors",{login : "Please login first"});
-        res.json('login-eroror')
+        res.json('login-error')
     }
 };
 
 util.noPermission = function(req,res){
     req.flash("errors",{login : "You don't have permission"});
-    req.logout();
     res.json('permission-error')
 };
 

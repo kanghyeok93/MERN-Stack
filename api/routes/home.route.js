@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
 const passport = require("../config/passport");
 
 router.get('/login',function(req,res){
    let username = req.flash("username")[0];
-   var errors = req.flash("errors")[0] || {};
+   let errors = req.flash("errors")[0] || {};
    res.json({username : username, errors : errors})
 });
 
@@ -29,7 +30,7 @@ router.post('/login',function(req,res,next){
     passport.authenticate('local-login'),
     (req, res) => {
         console.log('logged in', req.user);
-        var userInfo = {
+        let userInfo = {
             username : req.user.username,
             msg : "login"
         };

@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {Table, ButtonToolbar, Button, Form, InputGroup, FormControl} from "react-bootstrap";
+import {Table, ButtonToolbar, Button, InputGroup, FormControl} from "react-bootstrap";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { MdSearch } from "react-icons/md";
 
 import TableItem from './tableItem';
-import './index.scss'
-
+import './index.scss';
 import Page from '../Page/page';
 
 class Index extends Component {
@@ -94,14 +93,14 @@ class Index extends Component {
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                             type="text" id="keyword" name="keyword" value={keyword} onChange={handleSearch}/>
-                        <button onClick={this.ClickSearch} style={{fontWeight:"bold"}}>검색</button>
+                        <Button onClick={this.ClickSearch} variant="primary" className="search_btn">검색</Button>
                     </InputGroup>
                 <ButtonToolbar>
                     {
                         (loggedIn) ?
                         <Button variant="success" style={{marginBottom:"30px"}}>
                             <Link to={'/write'} className="write">글쓰기</Link>
-                        </Button> : <div className="login-error">로그인을 해야 글작성을 할 수 있습니다</div>
+                        </Button> : <div className="login-error">로그인을 해야 글 작성을 할 수 있습니다.</div>
                     }
                 </ButtonToolbar>
             </div>

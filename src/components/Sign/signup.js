@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Form, Button, Row, Col, Alert} from 'react-bootstrap';
-
-import './signup.scss'
 import axios from "axios";
+
+import './signup.scss';
 
 class Signup extends Component {
 

@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-// const cors = require('cors');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/passport');
@@ -24,7 +23,6 @@ db.once('open',function(){
     console.log('connected');
 });
 
-// app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 

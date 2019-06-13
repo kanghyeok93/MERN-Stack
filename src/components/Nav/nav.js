@@ -1,16 +1,15 @@
 import React, {Component,Fragment} from 'react';
 import { Container,Navbar,Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import axios from "axios";
 
 import './nav.scss';
-import axios from "axios";
 
 class Navs extends Component {
 
     logout = (e) => {
         e.preventDefault();
         axios.post('/logout').then(res => {
-            console.log(res.data);
             if(res.status === 200){
                 this.props.updateUser({
                     loggedIn : false,
@@ -21,8 +20,6 @@ class Navs extends Component {
     };
     render() {
         const { loggedIn,username } = this.props;
-        console.log('navbar render, props : ');
-        console.log(this.props);
 
         return (
             <Container style={{boxShadow:"0 1px 10px rgba(0,0,0,0.3)",background:"brown"}}>

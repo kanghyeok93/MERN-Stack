@@ -1,20 +1,24 @@
 import React, {Component, Fragment} from 'react';
-import { ButtonToolbar,Button } from "react-bootstrap";
+import {ButtonToolbar, Button, Form} from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Moment from 'react-moment';
 
+import ReplyItems from './replyItems';
 import './show.scss';
 
 class Show extends Component {
 
       state = {
-          showItem : {}
+          showItem : {},
+          comments : [],
+          reply : '',
+          errors : '',
       };
 
     componentDidMount() {
         axios.get('/board/show/' + this.props.match.params.id)
-            .then(res => this.setState({ showItem : res.data }))
+            .then(res => this.setState({ showItem : res.data, comments:res.data.comments }))
             .catch(err => console.log(err))
     }
 
@@ -23,15 +27,54 @@ class Show extends Component {
             .then(res => console.log(res.data))
             .catch(err => console.log(err));
 
-        // setTimeout(()=> {
             this.props.history.push('/');
-        // },1000);
     };
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    };
+
+    onSubmit = (e) => {
+        const{ reply } = this.state;
+        e.preventDefault();
+
+        const obj = {
+            reply : reply
+        };
+
+        axios.post('/board/reply/' + this.props.match.params.id,obj)
+            .then(res => this.setState({
+                errors : res.data,
+            }));
+
+        this.setState({
+            reply : ''
+        })
+    };
+
 
     render() {
         const { match,loggedIn, userId} = this.props;
-        const { showItem } = this.state;
+        const { showItem,reply,errors,comments } = this.state;
+
         const view = (showItem.author) ? (loggedIn) && userId === showItem.author._id : "";
+
+        const replyList = (comments.length === 0 ) ? <ReplyItems obj={null}/>
+              :   comments.map(
+                    (replyItem,index) => (
+                        <ReplyItems
+                            obj={replyItem} match={match.params.id} key={index}
+                            comments={comments} loggedIn={loggedIn} userId={userId}
+                        />
+                    )
+                );
+
+        if(errors === 'reply complete'){
+            return window.location.href='/show/' + match.params.id;
+        }
+
         return (
             <div className="Show">
                 <ButtonToolbar>
@@ -59,14 +102,35 @@ class Show extends Component {
                                     <div><span>Updated</span> : <Moment format="YYYY-MM-DD HH:mm">{showItem.updatedAt}</Moment></div> : null
                             }
                         </div>
-                        <div className="Show_body">
-                            <p>{showItem.body}</p>
+                        <div className="Show_body" style={{marginBottom:"55px"}}>
+                            {showItem.body}
                         </div>
                     </div>
                 </div>
+                <h2 className="C_h2" style={{marginBottom:"30px"}}>댓글 List</h2>
+                <div className="reply_item">
+                    {replyList}
+                </div>
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group controlId="reply">
+                        <Form.Label style={{margin:"30px 0 10px 0"}}>댓글 작성</Form.Label>
+                        <Form.Control type="text" name="reply" value={reply} onChange={this.handleChange}/>
+                    </Form.Group>
+                    {
+                        (errors['comments.0.memo']) ? <span className="reply_error">{errors['comments.0.memo'].message}</span> : null
+                    }
+                    <ButtonToolbar>
+                        {
+                            (loggedIn) ?
+                                <Button variant="success" style={{margin:"15px 0 50px 0"}} type="submit">Submit</Button>
+                                : <div className="reply-com-error">로그인을 해야 댓글작성을 할 수 있습니다.</div>
+                        }
+                    </ButtonToolbar>
+                </Form>
             </div>
         );
     }
 }
+
 
 export default Show;
