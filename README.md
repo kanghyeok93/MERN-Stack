@@ -23,5 +23,6 @@ backend technologies used in this project:
 * Passport  
 * MongoDB
 * mongoose
+* bcrypt-nodejs
 
 
