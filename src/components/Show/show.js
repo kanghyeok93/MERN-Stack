@@ -72,7 +72,7 @@ class Show extends Component {
                 );
 
         if(errors === 'reply complete'){
-            return window.location.href='/show/' + match.params.id;
+            return window.location.href='/';
         }
 
         return (

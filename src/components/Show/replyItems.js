@@ -23,12 +23,12 @@ class ReplyItems extends Component {
         const { msg } = this.state;
 
         if(msg === 'comment complete'){
-            return window.location.href='/show/' +this.props.match;
+            return window.location.href='/';
         }
 
         if(msg === 'permission-error' || msg === 'login-error'){
              window.alert("작성자만 글을 삭제할 수 있습니다.");
-            return window.location.href='/show/' +this.props.match;
+            return window.location.href='/';
         }
 
         return (
