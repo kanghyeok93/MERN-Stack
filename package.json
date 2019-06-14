@@ -41,6 +41,5 @@
   "proxy": "http://localhost:8080",
   "devDependencies": {
     "concurrently": "^4.1.0"
-  },
-  "homepage" : "https://skh-mern.herokuapp.com/"
+  }
 }
