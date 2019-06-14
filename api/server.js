@@ -12,8 +12,6 @@ const userRoute = require('./routes/user.route');
 const homeRoute = require('./routes/home.route');
 const config = require('./DB');
 
-app.use(express.static('/api'));
-
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
