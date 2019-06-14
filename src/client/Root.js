@@ -5,7 +5,7 @@ import App from '../App';
 
 const Root = () => {
     return (
-        <BrowserRouter histroy={browserHistory}>
+        <BrowserRouter>
             <App/>
         </BrowserRouter>
     );
