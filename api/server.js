@@ -41,12 +41,12 @@ app.use('/board',boardRoute);
 app.use('/user',userRoute);
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('../build'));
-
-    app.get('*', (req,res) => {
-        res.sendFile(path.join(__dirname,'build','index.html')); // relative path
-    })
+    app.use(express.static('build'));
 }
+
+app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname,'build','index.html')); // relative path
+});
 
 app.listen(process.env.PORT || 8080,function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
