@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2e95428-93d2-4627-ad9b-69c880e9951c" name="Default Changelist" comment="" />
+    <list default="true" id="d2e95428-93d2-4627-ad9b-69c880e9951c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/api/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/build/index.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,7 +28,16 @@
         <entry file="file://$PROJECT_DIR$/api/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="2345" selection-start-column="2345" selection-end-column="2345" />
+              <caret column="2261" lean-forward="true" selection-start-column="2261" selection-end-column="2261" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -167,6 +178,21 @@
             <path>
               <item name="mern-stack-board" type="b2602c69:ProjectViewProjectNode" />
               <item name="mern-stack-board" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mern-stack-board" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mern-stack-board" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mern-stack-board" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mern-stack-board" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -290,12 +316,12 @@
       <workItem from="1560281956908" duration="103000" />
       <workItem from="1560341785068" duration="24804000" />
       <workItem from="1560411690373" duration="17424000" />
-      <workItem from="1560499475738" duration="13371000" />
+      <workItem from="1560499475738" duration="14001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="626695000" />
+    <option name="totallyTimeSpent" value="627325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -334,9 +360,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/setupProxy.js" />
     <entry file="file://$PROJECT_DIR$/api/build/precache-manifest.70cd4296d064a3f96e39773bf49410e2.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -626,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Root.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -691,10 +707,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/build/static/js/2.bedcfecc.chunk.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="2345" selection-start-column="2345" selection-end-column="2345" />
+          <caret column="2261" lean-forward="true" selection-start-column="2261" selection-end-column="2261" />
         </state>
       </provider>
     </entry>
