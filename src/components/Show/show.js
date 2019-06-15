@@ -27,7 +27,9 @@ class Show extends Component {
             .then(res => console.log(res.data))
             .catch(err => console.log(err));
 
-            this.props.history.push('/');
+            setTimeout(() => {
+                    this.props.history.push('/');
+                },1000)
     };
 
     handleChange = (e) => {
@@ -72,7 +74,7 @@ class Show extends Component {
                 );
 
         if(errors === 'reply complete'){
-            return window.location.href='/';
+            this.props.history.push('/');
         }
 
         return (
