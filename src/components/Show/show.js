@@ -56,7 +56,6 @@ class Show extends Component {
         })
     };
 
-
     render() {
         const { match,loggedIn, userId} = this.props;
         const { showItem,reply,errors,comments } = this.state;
