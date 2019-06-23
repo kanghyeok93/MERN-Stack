@@ -18,7 +18,6 @@ frontend technologies used in this project:
 ### Server  
 backend technologies used in this project:  
 * axios
-* Restful
 * Node.js  
 * express  
 * Passport  
