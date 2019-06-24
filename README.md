@@ -1,6 +1,6 @@
-# MERN-Stack-Board
+# MERN-Stack-Board(SPA)
 
-### MERN(MongoDB, Express, React, NodeJS) Stack을 이용한 게시판 구현 
+### MERN(MongoDB, Express, React, NodeJS) Stack을 이용한 게시판 구현 - SPA
 ### + Passport Authentication
 
 클라이언트에서 실행시 .env.development 파일안에 코드를 제거해주세요.
