@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Root from '../src/client/Root';
 import * as serviceWorker from './serviceWorker';
+import Promise from 'promise-polyfill';
+
+if(!window.Promise){
+    window.Promise = Promise;
+}
 
 ReactDOM.render(<Root />, document.getElementById('root'));
 

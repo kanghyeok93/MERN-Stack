@@ -39,7 +39,7 @@ class ReplyItems extends Component {
                         <div style={{marginTop:"40px",fontSize:"1.1rem"}}>댓글이 없습니다.</div>
                         :
                         <div className="reply_Item">
-                                    <a  onClick={() => window.confirm('댓글 삭제하시겠습니까?') ? this.delete() : null} className="reply_del">
+                                    <a  onClick={() => window.confirm('댓글을 삭제하시겠습니까?') ? this.delete() : null} className="reply_del">
                                         <Button variant="warning" style={{margin:"0px 5px",color:"white"}}>
                                             Delete
                                         </Button>
