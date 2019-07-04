@@ -21,7 +21,7 @@ backend technologies used in this project:
 * Node.js  
 * express  
 * Passport  
-* MongoDB
+* MongoDB(Robo 3T / GUI Tool)
 * mongoose
 * bcrypt-nodejs
 

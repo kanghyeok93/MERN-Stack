@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route,Switch } from 'react-router-dom';
 import axios from 'axios';
 
-import { Nav,Index,Write,Show,Edit,User,Sign,UShow,UEdit,Login } from '../src/components';
+import { Nav,Index,Write,Show,Edit,User,Sign,UShow,UEdit,Login,NoMatch } from '../src/components';
 import './App.scss'
 
 class App extends Component {
@@ -43,7 +43,7 @@ class App extends Component {
     render() {
         const { loggedIn, username, userId} = this.state;
         return (
-            <div>
+            <div className="App">
                 <Nav updateUser={this.updateUser} loggedIn={loggedIn} username={username}/>
                 <h1>MERN-Stack-Board</h1>
                 <Switch>
@@ -56,6 +56,7 @@ class App extends Component {
                     <Route path={'/uedit/:username'} component={UEdit}/>
                     <Route path={'/login'} render={() => <Login updateUser={this.updateUser}/>}/>
                     <Route path={'/signup'} component={Sign}/>
+                    <Route component={NoMatch}/>
                 </Switch>
             </div>
         );

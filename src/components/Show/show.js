@@ -57,7 +57,7 @@ class Show extends Component {
     };
 
     render() {
-        const { match,loggedIn, userId} = this.props;
+        const { match,loggedIn, userId } = this.props;
         const { showItem,reply,errors,comments } = this.state;
 
         const view = (showItem.author) ? (loggedIn) && userId === showItem.author._id : "";

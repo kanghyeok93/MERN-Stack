@@ -4,10 +4,11 @@
   white-space:nowrap;
   overflow: hidden;
   text-overflow:ellipsis;
+  text-align: center;
 }
 .td_center{
   text-align:center;
 }
 tr:nth-child(even){
-  background-color: whitesmoke
+  background-color: rgba(245,245,245,0.7);
 }

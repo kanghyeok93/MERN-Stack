@@ -8,3 +8,4 @@ export { default as Sign } from './Sign/signup';
 export { default as UShow } from './u_show/u_show';
 export { default as UEdit } from './u_edit/u_edit';
 export { default as Login } from './Login/login';
+export { default as NoMatch } from './NoMatch/NoMatch';
